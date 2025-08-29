@@ -1,1 +1,389 @@
-Hello world
+DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Modern Glassmorphism Login Form</title>
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <form action="" id="loginForm">
+
+      <h1>Login</h1>
+
+      <div class="input-box">
+
+        <input type="text" id="username" placeholder="Username" required>
+
+        <i class='bx bxs-user'></i>
+
+      </div>
+
+      <div class="input-box">
+
+        <input type="password" id="password" placeholder="Password" required>
+
+        <i class='bx bxs-lock-alt'></i>
+
+      </div>
+
+      <div class="remember-forgot">
+
+        <label><input type="checkbox"> Remember me</label>
+
+        <a href="https://t.me/syaa/start?text=Halo+Pine+saya+lupa+password+website+nya">Forgot password?</a>
+
+      </div>
+
+      <button type="submit" class="order" id="loginBtn">
+
+        <span class="default">Login</span>
+
+        <span class="success">Success <svg viewBox="0 0 12 10">
+
+          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+
+        </svg></span>
+
+        <span class="failure">Failed <svg viewBox="0 0 12 12">
+
+          <line x1="2" y1="2" x2="10" y2="10"></line>
+
+          <line x1="2" y1="10" x2="10" y2="2"></line>
+
+        </svg></span>
+
+        <div class="box"></div>
+
+        <div class="truck">
+
+          <div class="back"></div>
+
+          <div class="front">
+
+            <div class="window"></div>
+
+          </div>
+
+          <div class="light top"></div>
+
+          <div class="light bottom"></div>
+
+        </div>
+
+        <div class="lines"></div>
+
+      </button>
+
+      <div class="register-link">
+
+        <p>Don't have an account? <a href="https://t.me/syaa/start?text=Halo+syaa+saya+mau+daftar+akun">Register</a></p>
+
+      </div>
+
+    </form>
+
+  </div>
+
+
+
+  <!-- Custom Modal for Dialogs -->
+
+  <div class="modal" id="dialogModal">
+
+    <div class="modal-content">
+
+      <h2 id="dialogTitle"></h2>
+
+      <p id="dialogMessage"></p>
+
+      <button class="modal-btn" id="closeModal">OK</button>
+
+    </div>
+
+  </div>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
+
+
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <title>Playlist Pine</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+  <link href="styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="w-full h-full rounded-none" id="app">
+
+    <!-- List Musik nyaa -->
+
+    <section class="absolute inset-0 bg-transparent px-6 pt-6 pb-24 overflow-y-auto no-scrollbar transition-transform duration-300 ease-in-out" id="music-list">
+
+      <!-- Info album dll -->
+
+      <div class="flex items-center mb-6 gap-4">
+
+        <div class="w-20 h-20 rounded-3xl overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
+
+          <img alt="Logo music" class="w-full h-full object-cover" height="80" src="logo.jpg" width="80">
+
+        </div>
+
+        <div class="flex flex-col">
+
+          <h1 class="text-2xl font-semibold leading-tight mb-1" style="letter-spacing: 0.25em;">Pine Official</h1>
+
+          <p class="text-gray-400 text-sm mb-2">Mari Galau Bersamaku wk</p>
+
+          <div class="flex space-x-3 text-gray-400 text-lg">
+
+            <button aria-label="Add to playlist" class="hover:text-white">
+
+              <i class="fas fa-plus"></i>
+
+            </button>
+
+            <button aria-label="Share" class="hover:text-white">
+
+              <i class="fas fa-share-alt"></i>
+
+            </button>
+
+            <button aria-label="More options" class="hover:text-white">
+
+              <i class="fas fa-ellipsis-h"></i>
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Play and Shuffle buttons -->
+
+      <div class="flex gap-4 mb-6">
+
+        <button class="flex-1 bg-white text-gray-900 rounded-xl py-2 font-semibold flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(255,255,255,0.7)] hover:brightness-110 transition" id="play-button">
+
+          <i class="fas fa-play"></i> Play
+
+        </button>
+
+        <button class="flex-1 bg-gray-800 rounded-xl py-2 font-semibold flex items-center justify-center gap-2 hover:bg-gray-700 transition">
+
+          <i class="fas fa-random"></i> Shuffle
+
+        </button>
+
+      </div>
+
+      <!-- Song list -->
+
+      <ul class="space-y-4 text-gray-400 text-sm font-medium">
+
+        <li class="flex justify-between items-center cursor-pointer hover:text-white" data-index="0">
+
+          <div>
+
+            <span class="font-semibold text-white">01</span>
+
+            <span class="ml-2">18</span>
+
+            <p class="text-xs text-gray-500 ml-7">One Direction</p>
+
+          </div>
+
+          <button aria-label="More options" class="text-gray-500 hover:text-white">
+
+            <i class="fas fa-ellipsis-h"></i>
+
+          </button>
+
+        </li>
+
+        <!-- Other songs will be dynamically generated or manually added similarly -->
+
+        <!-- Add remaining songs here following the same structure -->
+
+      </ul>
+
+    </section>
+
+    <!-- Now Playing Screen -->
+
+    <section class="absolute inset-0 flex flex-col px-6 pt-6 pb-8 transition-transform duration-300 ease-in-out translate-x-full" id="now-playing">
+
+      <!-- Header -->
+
+      <div class="flex justify-center mb-6 relative">
+
+        <button aria-label="Close" class="absolute left-0 top-0 text-gray-400 hover:text-white text-lg" id="close-now-playing">
+
+          <i class="fas fa-chevron-down"></i>
+
+        </button>
+
+        <span class="text-sm font-semibold">pine Official Playlist</span>
+
+        <button aria-label="Playlist" class="absolute right-0 top-0 text-gray-400 text-lg">
+
+          <i class="fas fa-list-ul"></i>
+
+        </button>
+
+      </div>
+
+      <!-- Album art -->
+
+      <div class="mx-auto w-56 h-56 rounded-3xl overflow-hidden mb-6 bg-white flex items-center justify-center">
+
+        <img alt="Song cover" class="w-full h-full object-cover" height="224" id="now-playing-img" src="/music/18.jpeg" width="224">
+
+      </div>
+
+      <!-- Song info -->
+
+      <div class="text-center mb-4">
+
+        <h2 class="font-semibold text-lg leading-6 mb-1" id="now-playing-title">18</h2>
+
+        <p class="text-gray-400 text-sm" id="now-playing-artist">One Direction</p>
+
+      </div>
+
+      <!-- Time and controls -->
+
+      <div class="flex justify-between text-xs text-gray-400 mb-6 px-2">
+
+        <span id="current-time">0:00</span>
+
+        <span id="duration">0:00</span>
+
+      </div>
+
+      <!-- Playback controls -->
+
+      <div class="flex justify-between items-center px-6">
+
+        <button aria-label="Shuffle" class="text-gray-400 hover:text-white text-lg">
+
+          <i class="fas fa-random"></i>
+
+        </button>
+
+        <button aria-label="Previous" class="text-gray-400 hover:text-white text-2xl" id="previous-btn">
+
+          <i class="fas fa-step-backward"></i>
+
+        </button>
+
+        <button aria-label="Play" class="bg-white text-gray-900 rounded-full w-14 h-14 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.7)] hover:scale-105 transition-transform" id="play-pause-btn">
+
+          <i class="fas fa-play text-2xl pl-1"></i>
+
+        </button>
+
+        <button aria-label="Next" class="text-gray-400 hover:text-white text-2xl" id="next-btn">
+
+          <i class="fas fa-step-forward"></i>
+
+        </button>
+
+        <button aria-label="Repeat" class="text-gray-400 hover:text-white text-lg">
+
+          <i class="fas fa-redo"></i>
+
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- Bottom now playing bar -->
+
+    <div class="absolute bottom-20 left-6 right-6 bg-white rounded-3xl flex items-center gap-4 px-4 py-2 shadow-[0_0_20px_rgba(255,255,255,0.7)] cursor-pointer opacity-0 pointer-events-none transition-opacity duration-300" id="bottom-now-playing-bar">
+
+      <div class="w-12 h-12 rounded-3xl overflow-hidden flex-shrink-0">
+
+        <img alt="Song cover" class="w-full h-full object-cover" height="48" id="bottom-now-playing-img" src="/music/18.jpeg" width="48">
+
+      </div>
+
+      <div class="flex flex-col flex-grow overflow-hidden">
+
+        <p class="font-semibold text-gray-900 truncate" id="bottom-song-title">18</p>
+
+        <p class="text-xs text-gray-500 truncate" id="bottom-song-artist">One Direction</p>
+
+      </div>
+
+      <button aria-label="Favorite" class="text-gray-400 hover:text-gray-700 text-lg">
+
+        <i class="far fa-heart"></i>
+
+      </button>
+
+      <button aria-label="Pause" class="bg-gray-900 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-[0_0_10px_rgba(0,0,0,0.5)]" id="bottom-play-pause">
+
+        <i class="fas fa-pause"></i>
+
+      </button>
+
+    </div>
+
+    <!-- Audio element -->
+
+    <audio id="audio-player" preload="metadata">
+
+      <source src="/music/18.mp3" type="audio/mpeg">
+
+      Your browser does not support the audio element.
+
+    </audio>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+    </html>
